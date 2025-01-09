@@ -10,8 +10,6 @@ function App() {
     <>
       <div>
         <h2>This is My New React Project</h2>
-        <h2>This is My New React Project 2</h2>
-        <h2>This is My New React Project 3</h2>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
