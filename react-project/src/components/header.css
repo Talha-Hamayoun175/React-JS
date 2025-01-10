@@ -1,0 +1,48 @@
+/* General header styling */
+.header {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text color */
+    padding: 20px 0; /* Space above and below content */
+    position: sticky; /* Sticky position for fixed header */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+/* Flexbox container for alignment */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add spacing on sides */
+}
+
+/* Logo styling */
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navigation links */
+.header-nav .nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display items in a row */
+    gap: 15px; /* Spacing between links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.header-nav .nav-links li a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text color */
+    font-size: 16px;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.header-nav .nav-links li a:hover {
+    color: #ddd; /* Change color on hover */
+}

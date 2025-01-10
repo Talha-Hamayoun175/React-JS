@@ -1,0 +1,14 @@
+.map-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.map-container h2 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        margin: 10px;
+    }
+}
