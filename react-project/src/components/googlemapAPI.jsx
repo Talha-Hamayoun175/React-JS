@@ -22,7 +22,7 @@ function GoogleMapComponent() {
     return (
         <div className="map-container">
             <h4>Google Map with Marker</h4>
-            <LoadScript googleMapsApiKey="AIzaSyCuTilAfnGfkZtIx0T3qf-eOmWZ_N2LpoY">
+            <LoadScript googleMapsApiKey="">
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={position}
