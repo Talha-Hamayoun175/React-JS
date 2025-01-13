@@ -6,6 +6,9 @@
 
 form {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
@@ -18,7 +21,7 @@ input {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 12px;
     font-size: 1rem;
     color: white;
     background-color: #007bff;

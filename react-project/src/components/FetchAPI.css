@@ -6,6 +6,19 @@
     margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .product-card {
     background: #fff;
     border: 1px solid #ddd;

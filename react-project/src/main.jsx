@@ -12,18 +12,27 @@ import reactLogo1 from "./assets/2.jpg";
 import reactLogo2 from "./assets/3.jpg";
 import reactLogo3 from "./assets/4.jpg";
 import ProductGrid from "./components/FetchAPI.jsx";
-import WeatherApp from "./components/weatherAPI.jsx";
-import GoogleMapComponent from "./components/googlemapAPI.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Google from "./components/Google.jsx";
+import Weather from "./components/Weather.jsx";
+import Tailwind from "./components/Tailwind.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Header />
+    <Router>
+      <Header />
+      <Routes>
+          <Route path="/google" element={<Google />} />
+          <Route path="/weather" element={<Weather />} />
+          <Route path="/tailwind" element={<Tailwind />} />
+      </Routes>
+      </Router>
     <div className="container">
       <div className="row">
-        <div className="col-6">
+        <div className="col-md-6">
           < ListApp />
         </div>
-        <div className="col-6">
+        <div className="col-md-6">
           <MyComponent />
         </div>
       </div>
@@ -31,7 +40,7 @@ createRoot(document.getElementById("root")).render(
     <section>
       <div className="container mb-5">
         <div className="row">
-        <div className="col-4">
+        <div className="col-md-4 mt-4">
           <ProfileCard
             name="Tom"
             title="Software Engineer"
@@ -39,7 +48,7 @@ createRoot(document.getElementById("root")).render(
             description="A passionate developer with expertise in web development and problem-solving."
           />
         </div>
-        <div className="col-4">
+        <div className="col-md-4 mt-4">
           <ProfileCard
             name="John"
             title="Electrical Engineer"
@@ -47,7 +56,7 @@ createRoot(document.getElementById("root")).render(
             description="A passionate developer with expertise in web development and problem-solving."
           />
         </div>
-        <div className="col-4">
+        <div className="col-md-4 mt-4">
           <ProfileCard
             name="Doe"
             title="Chemical Engineer"
@@ -61,18 +70,12 @@ createRoot(document.getElementById("root")).render(
     <section>
       <div className="container">
         <div className="row">
-          <div className="col-12">
+          <div className="col-md-12">
           < ProductGrid />
-          </div>
-          <div className="col-12">
-            < WeatherApp />
-          </div>
-          <div className="col-12">
-            < GoogleMapComponent />
           </div>
         </div>
       </div>
     </section>
-    {/* < App /> */}
+    < App />
   </StrictMode>
 );

@@ -1,36 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import Header from "./components/NewHeader";
+import Balance from "./components/Balance";
+import IncomeExpense from "./components/IncomeExpense";
+import TransactionList from "./components/TransactionList";
+import AddTransaction from "./components/AddTransaction";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [transactions, setTransactions] = useState(
+        JSON.parse(localStorage.getItem("transactions")) || []
+    );
 
-  return (
-    <>
-      <div>
-        <h2>This is My New React Project</h2>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    useEffect(() => {
+        localStorage.setItem("transactions", JSON.stringify(transactions));
+    }, [transactions]);
+
+    const addTransaction = (transaction) => {
+        setTransactions([transaction, ...transactions]);
+    };
+
+    const deleteTransaction = (id) => {
+        setTransactions(transactions.filter((transaction) => transaction.id !== id));
+    };
+
+    return (
+        <div className="container">
+            <Header />
+            <Balance transactions={transactions} />
+            <IncomeExpense transactions={transactions} />
+            <TransactionList transactions={transactions} onDelete={deleteTransaction} />
+            <AddTransaction onAdd={addTransaction} />
+        </div>
+    );
 }
 
-export default App
+export default App;

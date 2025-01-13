@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 function Header() {
@@ -9,16 +10,16 @@ function Header() {
                 <nav className="header-nav">
                     <ul className="nav-links">
                         <li>
-                            <a href="#home">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <a href="#about">About</a>
+                            <Link to="/google">Google Map</Link>
                         </li>
                         <li>
-                            <a href="#services">Services</a>
+                            <Link to="/weather">Weather</Link>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <Link to="/tailwind">Tailwind CSS</Link>
                         </li>
                     </ul>
                 </nav>
