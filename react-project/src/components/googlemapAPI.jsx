@@ -10,7 +10,7 @@ function GoogleMapComponent() {
 
     const mapContainerStyle = {
         width: "100%",
-        height: "400px"
+        height: "600px"
     };
 
     const onMapClick = (e) => {

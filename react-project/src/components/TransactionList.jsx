@@ -8,7 +8,7 @@ function TransactionList({ transactions, onDelete }) {
                 {transactions.map(transaction => (
                     <li className={transaction.amount < 0 ? "minus" : "plus"} key={transaction.id}>
                         {transaction.text} <span>{transaction.amount < 0 ? "-" : "+"}{Math.abs(transaction.amount)}</span>
-                        <button onClick={() => onDelete(transaction.id)} className="delete-btn">x</button>
+                        <button onClick={() => onDelete(transaction.id)} className="delete-btn">X</button>
                     </li>
                 ))}
             </ul>
